@@ -1,7 +1,19 @@
 <?php
 
-$myData = file_get_contents('./MOCK_DATA.json');
+$servername = "localhost";
+$username = "root";
+$password = "root";
 
-$myJSON = json_encode($myData);
+if ($conn = new mysqli($servername, $username, $password)){
+    echo "connected";
+};
 
-echo ('<pre>' . $myData  . '</pre>') ;
+$myJSON = file_get_contents('./MOCK_DATA.json');
+
+$myData = json_decode($myJSON);
+
+//var_dump($myData);
+
+// for ($i = 0; $i < count($myData); $i++){
+//     echo ($myData[$i]->first_name . "<br>");
+// }
