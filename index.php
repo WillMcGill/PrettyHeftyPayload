@@ -2,7 +2,6 @@
 
 $myData = file_get_contents('./generated.json');
 
-$myJSON = json_encode($myData);
-$getNames = $myJSON[5]-> name;
+//$myJSON = json_encode($myData);
 
-echo ('<pre>' . $getNames  . '</pre>') ;
+echo ('<pre>' . $myData  . '</pre>') ;
