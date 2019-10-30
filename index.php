@@ -25,14 +25,12 @@ if ($dataExists->num_rows === 0) {
     }
 }
 
-echo ($dataExists->num_rows);
+$dataFromDB = mysqli_query($connection, "SELECT * FROM USERS");
+//var_dump($dataFromDB);
+
+while($row = $dataFromDB->fetch_assoc()) {
+    print_r($row);
 
 
-
-
-
-//var_dump($myData);
-
-// for ($i = 0; $i < count($myData); $i++){
-//     echo ($myData[$i]->first_name . "<br>");
-// }
+}
+print_r($dataFromDB);
